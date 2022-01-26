@@ -9,12 +9,12 @@ class Doodle {
   final Color iconBackground;
   final Icon icon;
   const Doodle(
-      {this.name,
-      this.time,
-      this.content,
-      this.doodle,
-      this.icon,
-      this.iconBackground});
+      {required this.name,
+      required this.time,
+      required this.content,
+      required this.doodle,
+      required this.icon,
+      required this.iconBackground});
 }
 
 const List<Doodle> doodles = [

@@ -4,7 +4,7 @@ import 'package:timeline_list/timeline_model.dart';
 import 'data.dart';
 
 class TimelinePage extends StatefulWidget {
-  TimelinePage({Key key, this.title}) : super(key: key);
+  TimelinePage({Key? key, this.title = 'TITLE'}) : super(key: key);
   final String title;
 
   @override
@@ -86,7 +86,7 @@ class _TimelinePageState extends State<TimelinePage> {
                 ),
                 Text(
                   doodle.name,
-                  style: textTheme.title,
+                  //style: textTheme.title,
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(

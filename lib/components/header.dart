@@ -8,6 +8,8 @@ class header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 40,
+      width: double.infinity,
       alignment: Alignment.topLeft,
       margin: const EdgeInsets.fromLTRB(32, 175, 0, 0),
       child: const Text(

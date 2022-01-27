@@ -1,17 +1,33 @@
 import 'package:flutter/material.dart';
 
 class SecondStepButton extends StatelessWidget {
+  final String routeName;
+  final Color textColor;
+  final Color buttonBackgroundColor;
+  final String text;
+  final bool checked;
+  final double right, top;
+  final double paddingHorizontal;
+  final double textFontSize;
   const SecondStepButton({
     Key? key,
     required this.checked,
+    required this.routeName,
+    required this.textColor,
+    required this.buttonBackgroundColor,
+    required this.text,
+    this.right = 28,
+    this.top = 60,
+    this.paddingHorizontal = 15,
+    this.textFontSize = 16,
   }) : super(key: key);
-
-  final bool checked;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.fromLTRB(0, 60, 28, 0),
+      width: 74,
+      height: 36,
+      margin: EdgeInsets.fromLTRB(0, top, right, 0),
       child: Align(
         alignment: Alignment.bottomRight,
         // margin: EdgeInsets.only(right: 0),
@@ -19,24 +35,22 @@ class SecondStepButton extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(7),
           child: ElevatedButton(
-            child: const Text(
-              'SETUP',
-              style: TextStyle(
-                color: Colors.white,
-              ),
+            child: Text(
+              text,
+              style: TextStyle(color: textColor),
             ),
             onPressed: (checked != true)
                 ? null
                 : () {
-                    Navigator.of(context).pushNamed('/user-installation');
+                    Navigator.of(context).pushNamed(routeName);
                   },
             style: ElevatedButton.styleFrom(
-                primary: const Color.fromRGBO(255, 125, 100, 1),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                textStyle: const TextStyle(
-                    color: Color.fromRGBO(255, 255, 255, 1),
-                    fontSize: 12,
+                primary: buttonBackgroundColor,
+                padding: EdgeInsets.symmetric(
+                    horizontal: paddingHorizontal, vertical: 10),
+                textStyle: TextStyle(
+                    color: textColor,
+                    fontSize: textFontSize,
                     fontWeight: FontWeight.w500)),
           ),
         ),

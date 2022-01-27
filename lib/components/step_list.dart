@@ -12,8 +12,8 @@ class StepList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
-      height: size.height * 0.5,
+    return SizedBox(
+      height: size.height * 0.35,
       width: double.infinity,
       // alignment: Alignment.topLeft,
       child: Stack(

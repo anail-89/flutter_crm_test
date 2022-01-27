@@ -13,33 +13,37 @@ class _BackgroundState extends State<Background> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Container(
-      width: double.infinity,
-      height: size.height,
-      child: Stack(
-        alignment: Alignment.center,
+    return Column(
+      children: [
+        SizedBox(
+          width: double.infinity,
+          height: size.height,
+          child: Stack(
+            alignment: Alignment.center,
 
-        // mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Positioned(
-            left: 0,
-            top: 0,
-            child: Image.asset(
-              "assets/images/logo.png",
-              width: size.width * 0.3,
-            ),
+            // mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Positioned(
+                left: 0,
+                top: 0,
+                child: Image.asset(
+                  "assets/images/logo.png",
+                  width: size.width * 0.3,
+                ),
+              ),
+              Positioned(
+                // left: size.width / 4,
+                top: size.height / 14,
+                child: Image.asset(
+                  "assets/images/plant1.png",
+                  width: size.width * 0.7,
+                ),
+              ),
+              widget.child,
+            ],
           ),
-          Positioned(
-            // left: size.width / 4,
-            top: size.height / 14,
-            child: Image.asset(
-              "assets/images/plant1.png",
-              width: size.width * 0.7,
-            ),
-          ),
-          widget.child,
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

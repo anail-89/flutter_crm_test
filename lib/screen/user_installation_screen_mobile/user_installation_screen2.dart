@@ -7,6 +7,7 @@ class UserInstallationScreen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         toolbarHeight: 65,
         // title: Text('App Bar!'),
@@ -17,7 +18,7 @@ class UserInstallationScreen2 extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
       ),
-      body: Center(child: Body2()),
+      body: SingleChildScrollView(child: Body2()),
     );
   }
 }
